@@ -2,7 +2,7 @@ var express = require("express");
 var router = express.Router();
 var fs = require("fs");
 
-const DATA_PATH = "data/teams.json";
+const DATA_PATH = "data/recipes.json";
 
 /**
  *
