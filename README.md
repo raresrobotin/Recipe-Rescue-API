@@ -39,7 +39,11 @@ Open http://localhost:3000 to see if it works
 
 ## JSON file as storage
 
+<<<<<<< HEAD
 Ingredients are stored inside [data/recipes.json](data/recipes.json)
+=======
+Team members are stored inside [data/recipes.json](data/recipes.json)
+>>>>>>> ebd82dc4c45019b68424cc4c7c02628a8ddc482a
 
 ```js
 // GET recipes-json
