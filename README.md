@@ -2,10 +2,10 @@
 
 Node JS CRUD API Example
 
-- [x] store info in [JSON file](data/teams.json)
+- [x] store info in [JSON file](data/recipes.json)
 - [x] store info in DB [MySQL](https://www.mysql.com/)
 - [ ] store info in file similar to mongo format (check https://github.com/sergeyksv/tingodb)
-- [x] UI Example for this app can be found in [nmatei/teams-networking](https://github.com/nmatei/teams-networking)
+- [x] UI Example for this app can be found in [nmatei/recipes-networking](https://github.com/nmatei/recipes-networking)
 
 ## Table of Contents
 
@@ -39,19 +39,19 @@ Open http://localhost:3000 to see if it works
 
 ## JSON file as storage
 
-Team members are stored inside [data/teams.json](data/teams.json)
+Ingredients are stored inside [data/recipes.json](data/recipes.json)
 
 ```js
-// GET teams-json
-fetch("http://localhost:3000/teams-json", {
+// GET recipes-json
+fetch("http://localhost:3000/recipes-json", {
   method: "GET",
   headers: {
     "Content-Type": "application/json"
   }
 });
 
-// POST teams-json/create
-fetch("http://localhost:3000/teams-json/create", {
+// POST recipes-json/create
+fetch("http://localhost:3000/recipes-json/create", {
   method: "POST",
   headers: {
     "Content-Type": "application/json"
@@ -60,12 +60,12 @@ fetch("http://localhost:3000/teams-json/create", {
     promotion: "WON3",
     members: "Your Name",
     name: "CV",
-    url: "https://github.com/nmatei/teams-networking"
+    url: "https://github.com/nmatei/recipes-networking"
   })
 });
 
-// DELETE teams-json/delete
-fetch("http://localhost:3000/teams-json/delete", {
+// DELETE recipes-json/delete
+fetch("http://localhost:3000/recipes-json/delete", {
   method: "DELETE",
   headers: {
     "Content-Type": "application/json"
@@ -73,8 +73,8 @@ fetch("http://localhost:3000/teams-json/delete", {
   body: JSON.stringify({ id: "fedcba1610309909431" })
 });
 
-// PUT teams-json/update
-fetch("http://localhost:3000/teams-json/update", {
+// PUT recipes-json/update
+fetch("http://localhost:3000/recipes-json/update", {
   method: "PUT",
   headers: {
     "Content-Type": "application/json"
@@ -84,7 +84,7 @@ fetch("http://localhost:3000/teams-json/update", {
     promotion: "WON3",
     members: "UpdatedName",
     name: "Name",
-    url: "https://github.com/nmatei/teams-networking"
+    url: "https://github.com/nmatei/recipes-networking"
   })
 });
 ```
@@ -93,11 +93,11 @@ fetch("http://localhost:3000/teams-json/update", {
 
 Team members are stored in [MySQL](https://www.mysql.com/)
 
-- configure user & pass for mysql connection [routes/teams-db.js](routes/teams-db.js)
-- create a database named **teams**
-- run [http://localhost:3000/teams/install](http://localhost:3000/teams/install)
+- configure user & pass for mysql connection [routes/recipes-db.js](routes/recipes-db.js)
+- create a database named **recipes**
+- run [http://localhost:3000/recipes/install](http://localhost:3000/recipes/install)
 - now you can run all CRUD operations
-  - the same as for json but change url **"teams-json" -> "teams"**
+  - the same as for json but change url **"recipes-json" -> "recipes"**
 
 ## TODOs
 
