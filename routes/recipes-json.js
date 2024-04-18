@@ -17,20 +17,24 @@ router.get("/", function (req, res, next) {
  *
  */
 router.post("/create", function (req, res, next) {
-  const promotion = req.body.promotion;
-  const members = req.body.members;
   const name = req.body.name;
-  const url = req.body.url;
+  const type = req.body.type;
+  const ingredients = req.body.ingredients;
+  const instructions = req.body.ingredients;
+  const time = req.body.time;
+  const image = req.body.image;
 
   const recipes = getRecipes();
   const id = Math.random().toString(36).substring(7) + new Date().getTime();
 
   recipes.push({
     id,
-    promotion,
-    members,
     name,
-    url
+    type,
+    ingredients,
+    instructions,
+    time,
+    image
   });
 
   setRecipes(recipes);
@@ -45,7 +49,7 @@ router.post("/create", function (req, res, next) {
 router.delete("/delete", function (req, res, next) {
   const id = req.body.id;
 
-  const recipes = getRecipes().filter(team => team.id != id);
+  const recipes = getRecipes().filter(recipe => recipe.id != id);
 
   setRecipes(recipes);
 
